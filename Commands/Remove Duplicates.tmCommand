@@ -5,12 +5,8 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#!/bin/bash
-export LC_ALL=C
-while IFS= read -r line; do
-  read -rn 10 prefix &lt; &lt;(tr -dc '[:alnum:]' &lt; /dev/urandom)
-  printf '%s\t%s\n' "$prefix" "$line"
-done|sort|cut -f2-
+	<string>#!/bin/sh
+exec /usr/bin/awk '!x[$0]++'
 </string>
 	<key>input</key>
 	<string>selection</string>
@@ -19,7 +15,7 @@ done|sort|cut -f2-
 	<key>keyEquivalent</key>
 	<string></string>
 	<key>name</key>
-	<string>Randomize Lines in Document / Selection</string>
+	<string>Remove Duplicates in Document / Selection</string>
 	<key>outputCaret</key>
 	<string>heuristic</string>
 	<key>outputFormat</key>
@@ -27,7 +23,7 @@ done|sort|cut -f2-
 	<key>outputLocation</key>
 	<string>replaceInput</string>
 	<key>uuid</key>
-	<string>90291A6E-34F6-4FD5-BA82-6BB6FB4DD492</string>
+	<string>357FAA7D-2F1D-4334-92AB-5428787BB88D</string>
 	<key>version</key>
 	<integer>2</integer>
 </dict>
